@@ -16,8 +16,8 @@ You will need:
 In this session you will learn the end-to-end process for performing migration of your Azure Database for PostgreSQL Single Server to Flexible Server. We will go step-by-step from pre-migration, migration, and post-migration stopping along the way to discuss different decision points, recommended practices, and demonstrating how to migration from Single Server to Flexible Server.
 
 ## Agenda
-- Azure Database for PostgreSQL Single Server and Flexible Server
-- Migration Method and tips
+- [Azure Database for PostgreSQL Single Server and Flexible Server](/01_Overview.md)
+- [Migration Method and tips](/02_Migration.md)
 - Migration Tool
 - Demos
 - Questions?
