@@ -128,5 +128,14 @@ Addresses Single Server shortcomings
 - New __major versions__
 - Improved out-of-box __performance__
 
-## Reference 
+## Summary of Single Server and Flexible Server
+
 [Comparison chart - Azure Database for PostgreSQL Single Server and Flexible Server](https://learn.microsoft.com/en-us/azure/postgresql/flexible-server/concepts-compare-single-server-flexible-server)
+
+- Username in connections string requires to modify application code.
+- Both lc_collate and lc_ctype effects sorting results.
+- [Read replica is currently public preview](https://learn.microsoft.com/en-us/azure/postgresql/flexible-server/concepts-read-replicas)
+- [Azure Active Directory Support(AAD) is currently public preview](https://learn.microsoft.com/en-us/azure/postgresql/flexible-server/concepts-azure-ad-authentication)
+- [Customer managed encryption key(BYOK) is currently public preview](https://learn.microsoft.com/en-us/azure/postgresql/flexible-server/concepts-data-encryption)
+- Microsoft Defender for Cloud is not supported yet but we have roadmap.
+- Azure Backup recovery service vault is not supported yet but we have roadmap.
