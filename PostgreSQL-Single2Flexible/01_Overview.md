@@ -128,6 +128,12 @@ Addresses Single Server shortcomings
 - New __major versions__
 - Improved out-of-box __performance__
 
+### Frequency asked Closed network deployment
+- [Private Link for Azure Database for PostgreSQL-Single server](https://learn.microsoft.com/en-us/azure/postgresql/single-server/concepts-data-access-and-security-private-link)
+- [Private access (VNet integration)](https://learn.microsoft.com/en-us/azure/postgresql/flexible-server/concepts-networking#private-access-vnet-integration)
+- [Private Networking Patterns in Azure Database for Postgres Flexible Server](https://techcommunity.microsoft.com/t5/azure-database-for-postgresql/private-networking-patterns-in-azure-database-for-postgres/ba-p/3007149)
+
+
 ## Summary of Single Server and Flexible Server
 
 [Comparison chart - Azure Database for PostgreSQL Single Server and Flexible Server](https://learn.microsoft.com/en-us/azure/postgresql/flexible-server/concepts-compare-single-server-flexible-server)

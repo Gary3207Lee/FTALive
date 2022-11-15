@@ -42,11 +42,20 @@
 - Up to eight databases per server per migration can be run in parallel
 - Data sizes less than 1 TB only supported currently 
 
-1) Depending on the size of data to be migrated, the migration time could vary from a few minutes to a few hours.
-2) Do not run any write workloads on your source server during the time of migration. It is recommended to put your source server in a read-only mode.
-3) Recommended to use only for individual DBs of size <= 1 TB.
-4) You can migrate up to 8 databases from a single server to flexible server in a single migration. If you need to migrate more databases, please create multiple migrations between the same source and target.
 
-We have a plan to release new tool covers over 1TB capacity, soon.
+### Online Migration restrictions
+- Recommended to use only for individual DBs <= 1 TB.
+- All logical replication restrictions  in PostgreSQL apply. If any of these restrictions apply to your PostgreSQL server and cannot be addressed before the migration, we strongly encourage evaluating the offline migration mode which does not have these restrictions.
+- You can migrate up to 8 databases from a server in a single activity. If you need to migrate more, create multiple activities.
+- Online migration requires logical replication to be turned on at the source. If not set, then the migration tool will automatically set it up and restart the database server before starting the online migration.
+
+### Offline Migration restrictions
+- Depending on the size of data to be migrated, the migration time could vary from a few minutes to a few hours.
+- Do not run any write workloads on your source server during the time of migration. It is recommended to put your source server in a read-only mode.
+- Recommended to use only for individual DBs of size <= 1 TB.
+- You can migrate up to 8 databases from a single server to flexible server in a single migration. If you need to migrate more databases, please create multiple migrations between the same source and target.
+
+
+__We have a plan to release new tool covers over 1TB capacity, soon.__
 
 
