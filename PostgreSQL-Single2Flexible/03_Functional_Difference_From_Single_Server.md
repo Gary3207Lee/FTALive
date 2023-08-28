@@ -9,7 +9,7 @@ Azure Database for PostgreSQL Flexible Server is the next generation managed Pos
 |Function|Sinlgle Server|Flexible Server|
 |--------|--------------|---------------|
 |Foundation OS|Windows|Linux|
-|Available Zone|No|Yes|
+|Zone-Redundant|No|Yes|
 |pgBouncer|No|Yes|
 |Maintenance Window|System schedule only|System or custom schedule|
 |Stop/Start|No|Yes(Compute Only)|
