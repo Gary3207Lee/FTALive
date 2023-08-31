@@ -11,7 +11,7 @@
   * [Review Migration Assessment Questions with Customer](01_Assess/PremigrationQuestions.md)
   * [Migration Assessment Helper Queries](01_Assess/Queries.sql)
 
-- Feature Mapping
+- Server Configuration & Feature Mapping
   * [Single Server Extensions](https://learn.microsoft.com/en-us/azure/postgresql/single-server/concepts-extensions)
   * [Flexible Server Extensions](https://learn.microsoft.com/en-us/azure/postgresql/flexible-server/concepts-extensions)
 
@@ -28,7 +28,6 @@
   * [Migrate your PostgreSQL database by using dump and restore](https://learn.microsoft.com/en-us/azure/postgresql/migrate/how-to-migrate-using-dump-and-restore)
   * [Migrate your PostgreSQL database using export and import](https://learn.microsoft.com/en-us/azure/postgresql/migrate/how-to-migrate-using-export-and-import)
   * [Minimal-downtime migration with DMS](https://learn.microsoft.com/en-us/azure/postgresql/migrate/how-to-migrate-online)
-  * [Minimal-downtime migration with Replication](https://learn.microsoft.com/en-us/azure/postgresql/migrate/concepts-single-to-flexible#how-to-migrate-from-single-server-to-flexible-server)
 
 - Capacity Planning
 - Target Spec Sizing
