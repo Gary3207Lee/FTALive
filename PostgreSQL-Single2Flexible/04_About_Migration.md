@@ -12,6 +12,9 @@
   * [Migration Assessment Helper Queries](01_Assess/Queries.sql)
 
 - Feature Mapping
+  * [Single Server Extensions](https://learn.microsoft.com/en-us/azure/postgresql/single-server/concepts-extensions)
+  * [Flexible Server Extensions](https://learn.microsoft.com/en-us/azure/postgresql/flexible-server/concepts-extensions)
+
 - Check Business/Service Condition
 
 ### 2. Planning
