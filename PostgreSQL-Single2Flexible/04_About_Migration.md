@@ -21,6 +21,8 @@
 
 - Migration Schedule
 - Online vs Offline
+  * [Offline/Online Pros & Cons](https://learn.microsoft.com/en-us/azure/postgresql/migrate/concepts-single-to-flexible#how-to-migrate-from-single-server-to-flexible-server)
+
 - Migration Method
 - Capacity Planning
 - Target Spec Sizing
