@@ -8,6 +8,9 @@
 
 - Assess Applications
 - Assess Databases
+  * [Review Migration Assessment Questions with Customer](01_Assess/PremigrationQuestions.md)
+  * [Migration Assessment Helper Queries](01_Assess/Queries.sql)
+
 - Feature Mapping
 - Check Business/Service Condition
 
