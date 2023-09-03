@@ -30,10 +30,14 @@
   * [Online: Minimal-downtime migration with DMS](https://learn.microsoft.com/en-us/azure/postgresql/migrate/how-to-migrate-online)
   * [Online: Minimal-downtime migration with Debezium Kafka](https://debezium.io/releases/)
 
-- Capacity Planning
-- Target Spec Sizing
+- Capacity Planning & Target Spec Sizing
 - Build Test Scenario for Post-Migration (DEV/UAT)
+  * Unit Test for Important or Mission Critical Task
+  * Performance Validation
 - Build Check Scenario for Post-Migration (PROD)
+  * Check Server Configurations & Optimize if required
+  * Check Data Consistency
+  * Check Statistics
 - Backup & Recovery (RTO/RPO)
 - High Availability & BCDR
 
