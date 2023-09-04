@@ -1,147 +1,17 @@
 # Overview (Azure Database for PostgreSQL Single Server and Flexible Server)
 
-## Single Server Overview and challenges
-
-![Single Server Architecture](./img/01_03_SingleArchitecture.png)
-
-### Built for 
-- Availability
-- Elasticity
-- Security
-- Integration in ecosystem
-- Industry leading TCO
-
-### Notable Facts
-- Generally available in 2018
-- Significant growth YoY
-- Many Tier-1 workloads
-
-## Challenges
-### 1. Application Latency
-
-![Single Best case](./img/01_04_SingleBestCase.png)
-
-![Single Middle Case](./img/01_05_SingleMiddleCase.png)
-
-![Single Worst Case](./img/01_05_SingleWorstCase.png)
-
-#### Key Points
-- Limited control on resource placement
-- Once deployed, the compute placement can change due to scale operations or any failures
-
-#### Key Challenges
-- Connection through Gateway
-- No Availability zone locality or choice
-
-#### Learnings
-- Eliminate gateway
-- Provide AZ colocation with application
-
-
-### 2. Connections
-Example of connections command:
-```bash
-psql "host=mydb-pg11.postgres.database.azure.com port=5432 dbname=postgres user=sr@mydb-pg11 password=myPassword sslmode=require"
-```
-#### Key Points
-- Not a regular Postgres username
-- Recommended to use connection pooling – like PgBouncer for Postgres
-- Connection retry logic should have back off logic
-
-#### Key Challenges
-- Connection requires - <username>@servername 
-- Establishing a new connection is expensive
-- Limits with # of connections per SKU
-
-#### Learnings
-- Remove @<servername>
-- Reduce time to establish new connection
-- Provide managed connection pooler
-
-### 3. Maintenance window
-![Maintenance Window](./img/01_06_MaintenanceWindow.png)
-#### Key Points
-- Fully system controlled 
-- Customers cannot choose the timing
-- Advanced Notification 72 hours. 
-- Total span time 15 hours (5 pm to 8 am) but actual maintenance for a server (minutes)
-
-#### Challenge
-- Customer has limited to no control to align maintenance to their workload patterns
-
-#### Learnings
-- Provide customer-controlled maintenance window
-
-### 4. High Availability
-![High Availability](./img/01_07_HighAvailability.png)
-
-#### Key Features
-- Region-level resiliency for compute failure 
-- AZ-level resiliency with storage failure with 3 copies
-
-#### Challenge
-- Failure of AZ where storage is provisioned can lead to downtime
-
-#### Learnings
-- Provide AZ selection
-- Provide AZ resilient HA with Automatic failover with no data loss
-
-### Challenges Summary
-#### Latency
-- AZ Colocation, no Gateway offers low latency
-
-#### Connections
-- Configure up to 5000 connections. 
-- Connection string does not require @server as part of username. 
-- Includes built-in connection pooler PgBouncer
-
-#### Maintenance window 
-- Can be customer controlled 
-- Availability Zone 
-- Resiliency with zone-redundant HA
-
-#### Additional Value
-+ Linux-based deployment 
-+ Improved out-of-box performance.
-
-
-## Flexible Server (Strategic choice of service)
-
-![Flexible Server architecture](./img/01_02_FlexibleArchitecture.png)
-
-Addresses Single Server shortcomings
-
-### Latency
-- AZ Colocation, no Gateway offers low latency
-
-### Connections
-- Configure up to 5000 connections.
-- Built-in connection pool feature 
-- Connection string does not require __@server__ as part of username. 
-
-### Maintenance window 
-- Can be __customer controlled__ 
-
-### Availability Zone 
-- Resiliency with __zone-redundant HA__
-- __Linux-based__ deployment 
-- New __major versions__
-- Improved out-of-box __performance__
-
-### Frequency asked Closed network deployment
-- [Private Link for Azure Database for PostgreSQL-Single server](https://learn.microsoft.com/en-us/azure/postgresql/single-server/concepts-data-access-and-security-private-link)
-- [Private access (VNet integration)](https://learn.microsoft.com/en-us/azure/postgresql/flexible-server/concepts-networking#private-access-vnet-integration)
-- [Private Networking Patterns in Azure Database for Postgres Flexible Server](https://techcommunity.microsoft.com/t5/azure-database-for-postgresql/private-networking-patterns-in-azure-database-for-postgres/ba-p/3007149)
-
-
-## Summary of Single Server and Flexible Server
-
-[Comparison chart - Azure Database for PostgreSQL Single Server and Flexible Server](https://learn.microsoft.com/en-us/azure/postgresql/flexible-server/concepts-compare-single-server-flexible-server)
-
-- Username in connections string requires to modify application code.
-- Both lc_collate and lc_ctype effects sorting results.
-- [Read replica is currently public preview](https://learn.microsoft.com/en-us/azure/postgresql/flexible-server/concepts-read-replicas)
-- [Azure Active Directory Support(AAD) is currently public preview](https://learn.microsoft.com/en-us/azure/postgresql/flexible-server/concepts-azure-ad-authentication)
-- [Customer managed encryption key(BYOK) is currently public preview](https://learn.microsoft.com/en-us/azure/postgresql/flexible-server/concepts-data-encryption)
-- Microsoft Defender for Cloud is not supported yet but we have roadmap.
-- Azure Backup recovery service vault is not supported yet but we have roadmap.
+## Readiness Resources
+Below you will find all of the most current readiness resources for getting up to speed on Single Server to Flexible Server Migrations
+#### PostgreSQL
+| Resource | Description | Link |
+|----------|-------------|------|
+| MS Docs | Azure Database for PostgreSQL Single Server to Flexible Server Migration Tool (<1TB) | [Link](https://docs.microsoft.com/en-us/azure/postgresql/migrate/concepts-single-to-flexible) |
+| MS Docs | Tutorial: Migrate Azure Database for PostgreSQL - Single Server to Flexible Server (Portal) | [Link](https://learn.microsoft.com/en-us/azure/postgresql/migrate/how-to-migrate-single-to-flexible-portal) |
+| Ms Docs | Tutorial: Migrate Azure Database for PostgreSQL - Single Server to Flexible Server (CLI) |[Link](https://learn.microsoft.com/en-us/azure/postgresql/migrate/how-to-migrate-single-to-flexible-cli)
+| Video | PG Led: Single to Flexible Server Migration Tool Demo | [Link](https://microsoftapc-my.sharepoint.com/personal/hariramt_microsoft_com/_layouts/15/stream.aspx?id=%2Fpersonal%2Fhariramt%5Fmicrosoft%5Fcom%2FDocuments%2FPostgres%2FRetirement%2FS2F%20FMS%20demo%20%2D%20migration%20%2B%20PGAdmin%2Emp4&ga=1) |
+| Video | PG Led: CSS Brown Bag- Single to Flexible Server Migration Tool Improvements | [Link](https://microsoft-my.sharepoint.com/personal/abkumbha_microsoft_com/_layouts/15/stream.aspx?id=%2Fpersonal%2Fabkumbha%5Fmicrosoft%5Fcom%2FDocuments%2FRecordings%2FCSS%20Brown%20Bag%2D%20Migration%20Tool%20improvements%20%28Single%20to%20Flexible%20server%20Migration%29%2D20230213%5F080415%2DMeeting%20Recording%2Emp4&ga=1) |
+| Video | PG Led: Using Warp+ Online Migration Tool to Migrate PostgreSQL VLDBs (1TB+) | [Link](https://microsoftapc.sharepoint.com/:v:/t/FTAPostgreSQLSingle2FlexibleMigration/EY3x-i5C481MiRN-1TzzhHEBEl1RlJjepO0DUu_PTw35BQ?e=a8YwTC) |
+| Video | PG Led: Azure Database for PostgreSQL Single Server to Flexible Server Migration (<1TB) | [Link](https://microsoft.sharepoint.com/teams/FastTrackforAzureWimDemo/_layouts/15/stream.aspx?id=%2Fteams%2FFastTrackforAzureWimDemo%2FShared%20Documents%2FGeneral%2FRecordings%2FView%20Only%2FPG%20Led%20_%20Azure%20Database%20for%20PostgreSQL%20Single%20Server%20to%20Flexible%20Server%20Migration-20220721_165636-Meeting%20Recording%2Emp4) , [Link](https://microsoft.sharepoint.com/teams/FastTrackforAzureWimDemo/_layouts/15/stream.aspx?id=%2Fteams%2FFastTrackforAzureWimDemo%2FShared%20Documents%2FGeneral%2FRecordings%2FView%20Only%2FPG%20Led%20%5F%20Azure%20Database%20for%20PostgreSQL%20Migration%20Session%20Series%201%20%28Single%20to%20Flexible%29%20ASIA%5FEMEA%2D20220615%5F085849%2DMeeting%20Recording%2Emp4) |
+| Teams | Resources for migrating PostgreSQL VLDBs from Single to Flexible Server using Flexy or Warp+ (1TB+) | [Link](https://microsoftapc.sharepoint.com/:f:/t/FTAPostgreSQLSingle2FlexibleMigration/Er6tmvlPf8lMqZS5dxuX22IBJYDOyr6aaIYlbHESID4Kjw?e=4s1cOG) |
+| MS Docs | Troubleshoot Common Azure Database Migration Service Issues and Errors | [Link](https://learn.microsoft.com/en-us/azure/dms/known-issues-troubleshooting-dms) |
+| MS Docs | Known Issues with Online Migrations from PostgreSQL to Azure Database for PostgreSQL | [Link](https://learn.microsoft.com/en-us/azure/dms/known-issues-azure-postgresql-online) |
