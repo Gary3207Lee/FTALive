@@ -20,7 +20,11 @@ Azure Database for PostgreSQL Flexible Server is the next generation managed Pos
 |Network|Public, Private Links|PUBLIC, VNET INJECTION, PRIVATE LINKS (PREVIEW)|
 |High Availability|Built-in HA(Single-AZ) 99.99%|Non-HA 99.9% Same Zone HA 99.95% Zone-redundant HA 99.99%|
 
-- Detail Reference Table for Comparison. [Reference Document](https://learn.microsoft.com/en-us/azure/postgresql/flexible-server/concepts-compare-single-server-flexible-server#comparison-table)
+- Detail Reference Table for Comparison. 
+ [Reference Document](https://learn.microsoft.com/en-us/azure/postgresql/flexible-server/concepts-compare-single-server-flexible-server#comparison-table)
+
+#### References
+- [Comparison chart - Azure Database for PostgreSQL Single Server and Flexible Server](https://learn.microsoft.com/en-us/azure/postgresql/flexible-server/concepts-compare-single-server-flexible-server)
 
 ## High Availability Architecture
 

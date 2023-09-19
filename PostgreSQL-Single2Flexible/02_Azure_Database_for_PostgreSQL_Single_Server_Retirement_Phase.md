@@ -11,8 +11,16 @@
 
 ![Single Server Milestone](./img/02_01_Single_Server_Milestone.png)
 
+#### References
+- [Azure Database for PostgreSQL Single Server will be retired—migrate to Flexible Server by 28 March 2025](https://azure.microsoft.com/en-us/updates/azure-database-for-postgresql-single-server-will-be-retired-migrate-to-flexible-server-by-28-march-2025/)
+- [What happens to Azure Database for PostgreSQL - Single Server after the retirement announcement?](https://learn.microsoft.com/en-us/azure/postgresql/single-server/whats-happening-to-postgresql-single-server)
+- [Migration tool - Azure Database for PostgreSQL Single Server to Flexible Server](https://learn.microsoft.com/en-us/azure/postgresql/migrate/concepts-single-to-flexible)
+
 ## Major version retirement policy.
 
 ### The table below provides the retirement details for PostgreSQL major versions. The dates follow the [PostgreSQL community versioning policy](https://www.postgresql.org/support/versioning/).
 
 ![Single Server Milestone](./img/02_02_Versioning_Policy.png)
+
+#### References
+- [Azure Database for PostgreSQL versioning policy](https://learn.microsoft.com/en-us/azure/postgresql/single-server/concepts-version-policy)
